@@ -25,3 +25,7 @@ GitHubのProjectsのDraftIssueをIssueに一括で変換するツール。
 - カスタムフィールドでは単一選択の物のみ移行されます
 - 標準のフィールドは、assignのみ移行されます
 
+# 備考
+CreateIssue APIのレートリミットを避けるために、デフォルトで25秒間のインターバルを設けています。
+この間隔は `-i` オプションで変更可能としています。
+https://github.com/cli/cli/issues/4801#issuecomment-1431812916
