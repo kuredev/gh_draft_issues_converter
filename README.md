@@ -1,31 +1,31 @@
-# 概要
-GitHubのProjectsのDraftIssueをIssueに一括で変換するツール。
+# Overview
+A tool to batch convert Draft Issues to Issues in GitHub Projects.
 
-# インストール
-
-```sh
-% gem install gh_draft_issues_conerter
-```
-
-# 使い方
-
-事前に用意するもの
-
-- Projectsの番号 ( `-p` で指定 )
-- リポジトリ名(owner/repositoy)（ `-r` で指定）
-- GitHub のPersonal Token（ `GITHUB_KEY` に登録しておくこと）
-
-## 例
+# Installation
 
 ```sh
-% gh_draft_issues_conerter -p 1 -r kuredev/gh-draft-issues-converter   
+% gem install gh_draft_issues_converter
 ```
 
-# 制約
-- カスタムフィールドでは単一選択の物のみ移行されます
-- 標準のフィールドは、assignのみ移行されます
+# Usage
 
-# 備考
-CreateIssue APIのレートリミットを避けるために、デフォルトで25秒間のインターバルを設けています。
-この間隔は `-i` オプションで変更可能としています。
+Prerequisites:
+
+- Project number (specify with `-p`)
+- Repository name (owner/repository, specify with `-r`)
+- GitHub Personal Token (register it as `GITHUB_KEY`)
+
+## Example
+
+```sh
+% gh_draft_issues_converter -p 1 -r kuredev/gh-draft-issues-converter   
+```
+
+# Limitations
+- Only single-select custom fields will be migrated.
+- Among standard fields, only the assignee will be migrated.
+
+# Notes
+To avoid rate limits with the CreateIssue API, a default interval of 25 seconds is set. This interval can be adjusted using the `-i` option.
+
 https://github.com/cli/cli/issues/4801#issuecomment-1431812916
