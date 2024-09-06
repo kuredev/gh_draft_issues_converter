@@ -329,7 +329,7 @@ module GhDraftIssueConverter
         !draft_issue.unnecessary_for_convert_issue?
       end
 
-      draft_issues.each do |draft_issue, index|
+      draft_issues.each_with_index do |draft_issue, index|
         puts "Converting: #{draft_issue.title}"
 
         issue_repository_id = @resource_manager.create_issue_from_draft(
@@ -350,7 +350,7 @@ module GhDraftIssueConverter
         puts "Complete Convert."
 
         if index == draft_issues.length - 1
-          # Finish
+          puts "All DraftIssue Converted."
         else
           # https://github.com/cli/cli/issues/4801#issuecomment-1431812916
           puts "Sleep(25s) for rate limit..."
