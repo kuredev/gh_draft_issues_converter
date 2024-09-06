@@ -28,6 +28,8 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
+
   # Uncomment to register a new dependency of your gem
   spec.add_dependency "graphlient"
 
