@@ -12,6 +12,7 @@ A tool to batch convert Draft Issues to Issues in GitHub Projects.
 Prerequisites:
 
 - Project number (specify with `-p`)
+  - ex) "In the URL `https://github.com/users/kuredev/projects/1`, the `1` corresponds to the project number."
 - Repository name (owner/repository, specify with `-r`)
 - GitHub Personal Token (register it as `GITHUB_KEY`)
 
