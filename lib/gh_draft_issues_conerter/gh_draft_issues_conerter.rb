@@ -19,10 +19,12 @@ module GhDraftIssueConverter
       @assign_user_ids = assign_user_ids
     end
 
-    def unnecessary_for_issue?
-      field_values.any? do |field_value|
-        field_value.field_name == "Status" && field_value.field_value_name == "🚫unnecessary"
-      end
+    def unnecessary_for_convert_issue?
+      false
+
+      #field_values.any? do |field_value|
+      #  field_value.field_name == "Status" && field_value.field_value_name == "🚫unnecessary"
+      #end
     end
 
     def user_ids_github_format
@@ -324,7 +326,7 @@ module GhDraftIssueConverter
 
       draft_issues = @resource_manager.fetch_draft_issues(project_id)
       draft_issues.select! do |draft_issue|
-        !draft_issue.unnecessary_for_issue?
+        !draft_issue.unnecessary_for_convert_issue?
       end
 
       draft_issues.each do |draft_issue, index|
