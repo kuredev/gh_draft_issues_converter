@@ -15,9 +15,6 @@ module GhDraftIssuesConerter
         opts.banner = "Usage: bundle exec ruby gh-draft-issues-conerter --projects_number N --repository_name xxxxx"
 
         opts.on("-p N", "--projects_number N", "project number") do |projects_number|
-          pp "---"
-          pp projects_number
-
           options[:projects_number] = projects_number.to_i
         end
 
