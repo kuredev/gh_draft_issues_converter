@@ -1,6 +1,8 @@
 # Overview
 A tool to batch convert Draft Issues to Issues in GitHub Projects.
 
+https://kuredev.hashnode.dev/i-built-a-tool-to-batch-convert-draft-issues-to-issues-in-github-projects
+
 # Installation
 
 ```sh
